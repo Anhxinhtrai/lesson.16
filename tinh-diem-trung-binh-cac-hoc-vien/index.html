@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính điểm trung bình</title>
+    <script src="Point.js"></script>
+</head>
+<body>
+<script>
+    let bangDiem = [];
+    let diem1 = new Point();
+    let toan1 = diem1.getToan();
+    let hoa1 = diem1.getHoa();
+    let ly1 = diem1.getLy();
+    let tb1 = (toan1+ly1+hoa1)/3;
+
+    let diem2 = new Point();
+
+    let toan2 = diem2.getToan();
+    let hoa2 = diem2.getHoa();
+    let ly2 = diem2.getLy();
+    let tb2 = (toan2+ly2+hoa2)/3;
+
+    let diem3 = new Point();
+
+    let toan3 = diem3.getToan();
+    let hoa3 = diem3.getHoa();
+    let ly3 = diem3.getLy();
+    let tb3 = (toan3+ly3+hoa3)/3;
+    document.write("điểm của Khôi là: <br> toán "+ toan1 + "<br>lý " + ly1 + "<br>hoá " + hoa1 + "<br>điểm tb là " + tb1 + "<br>");
+    document.write("điểm của Quân là: <br> toán "+ toan2 + "<br>lý " + ly2 + "<br>hoá " + hoa2 + "<br>điểm tb là " + tb2 + "<br>");
+    document.write("điểm của Duy là: <br> toán "+ toan3 + "<br>lý " + ly3 + "<br>hoá " + hoa3 + "<br>điểm tb là " + tb3 + "<br>");
+
+
+</script>
+</body>
+</html>

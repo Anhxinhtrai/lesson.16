@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vẽ hình chữ nhật</title>
+</head>
+<style>
+    canvas {
+        border: black solid 1px;
+        background-color: darkgray;
+    }
+</style>
+<body>
+<label for="w">Chiều dài</label>
+<input type="number" id="w" oninput="drawRect()" value="0">
+<label for="h">Chiều rộng</label>
+<input type="number" id="h" oninput="drawRect()" value="0">
+<p>Diện tích <span id="S">0</span></p>
+<p>Chu vi <span id="C">0</span></p>
+<p>Có dạng như hình dưới</p>
+<canvas id="myCanvas" width="1920px" height="450px"></canvas>
+<script>
+
+    let canvas = document.getElementById('myCanvas');
+    let pen = canvas.getContext('2d');
+
+    function Rectangle(x, y, w, h, color) {
+        pen.beginPath();
+        pen.rect(x, y, w,h)
+        pen.fillStyle = color;
+        pen.fill();
+        pen.closePath()
+    }
+
+    function drawRect() {
+        let h = +document.getElementById('h').value;
+        let w = +document.getElementById('w').value;
+        pen.clearRect(0,0,canvas.width,canvas.height);
+        Rectangle(20,20,w,h,"green");
+        if(w>0 & h>0){
+            let C = (w+h)*2;
+            document.getElementById('C').innerHTML= C;
+            let S = w * h;
+            document.getElementById('S').innerHTML= S;
+        }
+
+    }
+
+</script>
+</body>
+</html>
